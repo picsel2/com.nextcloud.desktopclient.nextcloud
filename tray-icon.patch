@@ -1,0 +1,17 @@
+diff --git a/src/libsync/theme.cpp b/src/libsync/theme.cpp
+index 46060c5b7..3c5197432 100644
+--- a/src/libsync/theme.cpp
++++ b/src/libsync/theme.cpp
+@@ -222,10 +222,12 @@ QIcon Theme::themeIcon(const QString &name, bool sysTray) const
+     QString key = name + "," + flavor;
+     QIcon &cached = _iconCache[key];
+     if (cached.isNull()) {
++#if 0
+         if (QIcon::hasThemeIcon(name)) {
+             // use from theme
+             return cached = QIcon::fromTheme(name);
+         }
++#endif
+ 
+         const QString svgName = QString(Theme::themePrefix) + QString::fromLatin1("%1/%2.svg").arg(flavor).arg(name);
+         QSvgRenderer renderer(svgName);

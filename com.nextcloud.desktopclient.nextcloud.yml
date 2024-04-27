@@ -103,3 +103,5 @@ modules:
         path: icon-name.patch
       - type: file
         path: com.nextcloud.desktopclient.nextcloud.metainfo.xml
+      - type: patch
+        path: tray-icon.patch
